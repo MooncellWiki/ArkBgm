@@ -18,7 +18,6 @@ def wav_combine(file1, file2, export_name):
 for k in list_data:
     if '_loop' in k:
         continue
-    else:
-        replaced_name = k.replace('_intro', '_loop')
-        target_name = k.replace('_intro', '_combine').replace('.wav', '.mp3')
-        wav_combine(dir_data + k, dir_data + replaced_name, dir_data + target_name)
+    replaced_name = k.replace('_intro', '_loop')
+    target_name = k.replace('_intro', '_combine').replace('.wav', '.mp3')
+    wav_combine(dir_data + k, dir_data + replaced_name, dir_data + target_name)
