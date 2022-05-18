@@ -4,7 +4,7 @@ from ArkBgm.AudioComponent import *
 
 dir_conf = './config/'
 
-with open(dir_conf + "audio_data.json", encoding='utf-8') as f:
+with open(f"{dir_conf}audio_data.json", encoding='utf-8') as f:
     bgmData = json.load(f)['bgmBanks']
 
 for i in bgmData:
@@ -12,11 +12,8 @@ for i in bgmData:
 
     try:
         loop_file = i['loop'].lower() + '.wav'
-    except TypeError as e:
+    except (TypeError, AttributeError) as e:
         print(i, "\n", e)
-    except AttributeError as e:
-        print(i, "\n", e)
-
     duration = i['delay'] * 1000
     export_name = i['intro'].replace('_intro', '_combine') + '.mp3'
 

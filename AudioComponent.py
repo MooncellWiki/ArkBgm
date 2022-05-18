@@ -19,4 +19,4 @@ def wav_combine(file1, file2, delay, export_name):
         playlist += sound
     playlist.export(export_name, format="mp3")
     print('Export finished:', export_name)
-    print("|-"+file1, file2, delay)
+    print(f"|-{file1}", file2, delay)
